@@ -1,6 +1,5 @@
 <?php
 
-namespace Tag;
 
 class Attributes
 {
