@@ -2,7 +2,7 @@
 
 spl_autoload_register(function ($name) {
 
-    $path = "./classes/$name.php";
+    $path = "./kinds/$name.php";
     $path = str_replace(['/', '\\'], DIRECTORY_SEPARATOR, $path);
 
     if (file_exists($path))
