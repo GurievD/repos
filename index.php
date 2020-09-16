@@ -1,18 +1,31 @@
 <?php
 
 
+use classes\Animal;
+use classes\Eagle;
+use classes\Fish;
+use classes\Bear;
+use classes\Fly;
+use classes\Snail;
+use classes\Spider;
+use classes\Worm;
+
 require_once "./autoload.php";
 
-$tag = new Tag('a');
-$tag2 = new Tag('a');
+$eagle = new Eagle("Орёл");
+$fish = new Fish("Рыба");
+$bear = new Bear("Медведь");
+$snail = new Snail("Улитка");
+$spider = new Spider("Паук");
+$animal = new Animal("Животное");
+$worm = new Worm("Червь");
+$fly = new Fly("Муха");
 
-$tag
-    ->setAttribute('href', 'http://google.com')
-    ->appendBody('Google');
 
-$tag2
-    ->setAttribute('href', 'https://www.php.net/manual/en/')
-    ->appendBody('PHP документация');
-
-echo $tag . "<br/>";
-echo $tag2 . "<br/>";
+echo $eagle->name() . ' - ', $eagle->beak() . $eagle->betterEyes() . $eagle->predator() . $eagle->hunt($fish, $worm) . $eagle->move() . $eagle->sayFly() . "<br/>";
+echo $fish->name()  . ' - ', $fish->fin() . $fish->hunt($worm) . $fish->move() . $fish->saySwim() . "<br/>";
+echo $bear->name() . ' - ', $bear->paws() . $bear->hunt($fish) . $bear->predator() . $bear->move() . $bear->sayWalk() . "<br/>";
+echo $snail->name() . ' - ', $snail->foot() . $snail->eat() . $snail->move() . $snail->sayCrawl() . "<br/>";
+echo $spider->name() . ' - ', $spider->limbs() . $spider->predator() . $spider->hunt($fly) . $spider->move() . $spider->sayRun() . "<br/>";
+echo $worm->name() . ' - ', $worm->move() . $worm->eat() . $worm->sayCreep()  . "<br/>";
+echo $fly->name() . ' - ', $fly->move() . $fly->eat() . $fly->sayFly();
